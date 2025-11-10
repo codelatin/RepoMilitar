@@ -100,3 +100,122 @@
     font-size: 1.2rem;
     padding: 40px;
 }
+
+/* Contenedor de acciones */
+.project-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+/* Botón de Editar */
+.btn-edit {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid #218838;
+}
+
+.btn-edit:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Botón de Eliminar */
+.btn-delete {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid #c82333;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-edit,
+    .btn-delete {
+        justify-content: center;
+    }
+}
+/* Contenedor de búsqueda */
+.search-container {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Caja de búsqueda */
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+    border: 1px solid #b8860b;
+}
+
+/* Icono de lupa */
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b8860b;
+    font-size: 16px;
+}
+
+/* Input de búsqueda */
+.search-input {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    font-size: 15px;
+    background-color: rgba(20, 35, 20, 0.8);
+    color: #e0e0e0;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    background-color: rgba(25, 45, 25, 0.9);
+    box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .search-input {
+        font-size: 14px;
+        padding-left: 40px;
+    }
+    .search-icon {
+        left: 12px;
+        font-size: 14px;
+    }
+}

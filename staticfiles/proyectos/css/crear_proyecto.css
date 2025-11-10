@@ -1,13 +1,4 @@
-/* Fondo general con textura de camuflaje sutil */
-body {
-    background-color: #0a1a0f;
-    background-image: url('/static/images/camo-pattern.png'); /* opcional: imagen de camuflaje tenue */
-    background-repeat: repeat;
-    background-size: 150px;
-    color: #e0e0e0;
-    font-family: 'Segoe UI', 'Roboto', sans-serif;
-    padding: 20px;
-}
+
 
 /* Contenedor del formulario */
 .form-container {
