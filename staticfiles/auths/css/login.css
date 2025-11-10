@@ -1,13 +1,11 @@
 /* Fondo general con textura sutil de camuflaje */
 body.bg-dark {
     background-color: #0a1a0f;
-    background-image: url('https://i.imgur.com/8Zkq5Tg.png'); /* Textura camuflaje tenue opcional */
     background-attachment: fixed;
     color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
     margin: 0;
-    padding: 20px 0;
 }
 
 /* Contenedor principal del login */
