@@ -1,0 +1,51 @@
+{% load static %}
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <!-- Logo y Nombre del Proyecto -->
+        <a href="{% url 'home:home' %}" class="nav-logo">
+            <span class="logo-icon">⚔️</span>
+            <span class="logo-text">Repositorio Estudiantil</span>
+        </a>
+
+        <!-- Menú de Navegación (enlaces y botones) -->
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#banco-de-ideas" class="nav-link">Ideas</a>
+            </li>
+            <li class="nav-item">
+                <a href="#comunidad" class="nav-link">Comunidad</a>
+            </li>
+
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="{% url 'proyectos:crear_proyecto' %}" class="nav-link">Crear Proyecto</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'proyectos:lista_proyectos' %}" class="nav-link">Ver Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'auths:logout' %}" class="nav-link">Cerrar Sesión</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a href="{% url 'auths:login' %}" class="btn btn-login">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'auths:registro' %}" class="btn btn-register">Registrarse</a>
+                </li>
+            {% endif %}
+        </ul>
+
+        <!-- Botón para abrir/cerrar el menú en móviles (hamburguesa) -->
+        <button class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ✅ Enlazar los archivos estáticos (CSS y JS específicos del navbar) -->
+<link rel="stylesheet" href="{% static 'home/css/navbar_home.css' %}">
+<script src="{% static 'home/js/script_navbar_home.js' %}"></script>

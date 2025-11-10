@@ -1,0 +1,48 @@
+ :root {
+      --military-dark: #1a2e1a;
+            --military-green: #2d4a2d;
+            --military-olive: #4a5d3f;
+            --accent-gold: #c9a961;
+            --accent-khaki: #8b8761;
+            --text-light: #f0f4f0;
+            --text-gray: #b8c5b8;
+            --border-camo: #3d5233;
+            --highlight-green: #6b8e5f;
+        }
+
+         .register-container .btn:hover {
+            background: linear-gradient(to right, var(--highlight-green), var(--military-olive));
+            transform: translateY(-2px);
+        }
+
+         .register-container .btn:active {
+            transform: translateY(0);
+        }
+
+        .register-container a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .register-container a:hover {
+            color: var(--text-light);
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .register-container {
+                padding: 30px 20px; /* Menos padding en móviles */
+            }
+
+            .register-container h2 {
+                font-size: 1.5rem; /* Título un poco más pequeño */
+            }
+
+            .register-container input,
+            .register-container .btn {
+                padding: 12px; /* Menos padding en inputs y botones */
+                font-size: 0.95rem; /* Fuente un poco más pequeña */
+            }
+        }

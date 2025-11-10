@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Proyectos | Repositorio Militar</title>
+    <link rel="stylesheet" href="{% static 'proyectos/css/lista_proyectos.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+     {% include 'home/includes/navbar.html' %}
+
+    <div class="projects-container">
+        <h2><span class="form-header-icon">❤</span> LISTA DE PROYECTOS</h2>
+          <!-- Barra de búsqueda -->
+    <div class="search-container">
+        <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="search-input" placeholder="Buscar proyectos por título, autor o palabras clave..." class="search-input">
+        </div>
+    </div>
+        {% if proyectos %}
+            <div class="projects-grid">
+                {% for proyecto in proyectos %}
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">{{ proyecto.titulo }}</h3>
+                            <span class="project-status">{{ proyecto.get_estado_display }}</span>
+                        </div>
+                        <div class="project-body">
+                            <p><strong>Autor:</strong> {{ proyecto.autor }}</p>
+                            <p><strong>Tutor:</strong> {{ proyecto.tutor }}</p>
+                            <p><strong>Programa:</strong> {{ proyecto.programa }}</p>
+                            <p><strong>Palabras Clave:</strong> {{ proyecto.palabras_clave }}</p>
+                            <p><strong>Descripción:</strong> {{ proyecto.descripcion|truncatewords:30 }}</p>
+                        </div>
+                        <div class="project-footer">
+                            <small class="project-date">Creado: {{ proyecto.creado_en|date:"d/m/Y H:i" }}</small>
+                            <div class="project-actions">
+                                <a href="{% url 'proyectos:editar_proyecto' proyecto.id %}" class="btn-edit">
+                                    <i class="fas fa-edit"></i> Editar
+                                </a>
+                                <a href="{% url 'proyectos:eliminar_proyecto' proyecto.id %}" class="btn-delete" onclick="return confirm('¿Estás seguro de que deseas eliminar este proyecto?');">
+                                    <i class="fas fa-trash"></i> Eliminar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="no-projects">No hay proyectos registrados aún.</p>
+        {% endif %}
+    </div>
+    <script src="{% static 'proyectos/js/script_buscar.js'%}"></script>
+</body>
+</html>

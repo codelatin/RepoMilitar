@@ -1,0 +1,204 @@
+/* --- VARIABLES DE COLOR Y ESTILOS GLOBALES --- */
+:root {
+    --military-dark: #1a2e1a;
+    --military-green: #2d4a2d;
+    --military-olive: #4a5d3f;
+    --accent-gold: #c9a961;
+    --accent-khaki: #8b8761;
+    --text-light: #f0f4f0;
+    --text-gray: #b8c5b8;
+    --border-camo: #3d5233;
+    --highlight-green: #6b8e5f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--military-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* --- ESTILOS DE LA BARRA DE NAVEGACIÓN --- */
+.navbar {
+    background: linear-gradient(90deg, rgba(26, 46, 26, 0.95) 0%, rgba(45, 74, 45, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--accent-gold);
+    position: sticky; /* Mantiene el navbar fijo al hacer scroll */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- LOGO --- */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--accent-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+}
+
+/* --- MENÚ DE NAVEGACIÓN (DESKTOP) --- */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Efecto de subrayado animado */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-gold);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* --- BOTONES --- */
+.btn {
+    padding: 0.7rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-khaki) 100%);
+    color: var(--military-dark);
+    border-color: var(--accent-gold);
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(201, 169, 97, 0.4);
+}
+
+.btn-register {
+    background: transparent;
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.btn-register:hover {
+    background-color: var(--accent-gold);
+    color: var(--military-dark);
+    transform: translateY(-2px);
+}
+
+/* --- MENÚ HAMBURGUESA (OCULTO EN DESKTOP) --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Por encima del menú */
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--accent-gold);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- DISEÑO RESPONSIVO --- */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Fuera de la pantalla */
+        top: 0;
+        flex-direction: column;
+        background-color: var(--military-dark);
+        width: 100%;
+        height: 100vh; /* Ocupa toda la pantalla */
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.7);
+        padding-top: 5rem; /* Espacio para que no tape el logo */
+    }
+
+    .nav-menu.active {
+        left: 0; /* Aparece en la pantalla */
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .menu-toggle {
+        display: flex; /* Se hace visible */
+    }
+
+    /* Animación de la 'X' en el menú hamburguesa */
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

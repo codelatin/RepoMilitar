@@ -1,0 +1,102 @@
+/* Contenedor de la lista */
+.projects-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(12, 25, 12, 0.8);
+    border: 2px solid #b8860b;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(184, 134, 11, 0.4);
+    backdrop-filter: blur(10px);
+    color: #e0e0e0;
+}
+
+.projects-container h2 {
+    color: #b8860b;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #b8860b;
+    padding-bottom: 10px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Grilla de proyectos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjeta de proyecto */
+.project-card {
+    background-color: rgba(20, 35, 20, 0.7);
+    border: 1px solid #b8860b;
+    border-radius: 6px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(184, 134, 11, 0.5);
+}
+
+/* Encabezado de tarjeta */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.project-title {
+    color: #e0e0e0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.project-status {
+    background-color: #b8860b;
+    color: #1a1a1a;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Contenido de tarjeta */
+.project-body p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: #c0c0c0;
+}
+
+.project-body strong {
+    color: #b8860b;
+}
+
+/* Pie de tarjeta */
+.project-footer {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+.project-date {
+    color: #a0b0a0;
+    font-size: 0.85rem;
+}
+
+/* Mensaje si no hay proyectos */
+.no-projects {
+    text-align: center;
+    color: #a0b0a0;
+    font-size: 1.2rem;
+    padding: 40px;
+}

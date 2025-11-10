@@ -1,0 +1,970 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositorio Estudiantil - Fuerzas Militares de Colombia</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+   
+{% include 'home/includes/navbar.html' %}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">
+                <span>⚔️</span>
+                <span>Plataforma Oficial FFMM</span>
+            </div>
+            <h2>
+                Innovación y Conocimiento
+                <span class="highlight">al Servicio de la Patria</span>
+            </h2>
+            <p>
+                Plataforma colaborativa diseñada para gestionar, monitorear y compartir proyectos de investigación militar. 
+                Un espacio donde las ideas se transforman en soluciones estratégicas para las Fuerzas Militares de Colombia.
+            </p>
+            <div class="cta-buttons">
+                <button class="btn-primary">
+                    Crear Cuenta
+                    <span>→</span>
+                </button>
+              <a href="{% url 'proyectos:lista_proyectos' %}" class="btn btn-secondary px-4 py-2 rounded-3 shadow-sm fw-semibold">
+    🚀 Explorar Proyectos
+</a>
+
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Proyectos Activos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1,200</div>
+                    <div class="stat-label">Estudiantes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Áreas de Estudio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Tasa de Éxito</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="visual-card">
+                <div class="card-item">
+                    <div class="card-icon">📚</div>
+                    <div class="card-content">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-icon">🎯</div>
+                    <div class="card-content">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-icon">👥</div>
+                    <div class="card-content">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    placeholder="Busca proyectos por palabras clave, área de estudio, autor..."
+                >
+                <button class="btn-search">Buscar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <h3>Características Principales</h3>
+            <p>Todo lo que necesitas para gestionar tus proyectos académicos militares</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h4>Monitoreo Continuo</h4>
+                <p>Seguimiento completo del proyecto desde su inicio hasta la finalización con trazabilidad total</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h4>Búsqueda Inteligente</h4>
+                <p>Encuentra proyectos por palabras clave, áreas de interés y autores específicos</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h4>Banco de Ideas</h4>
+                <p>Explora y contribuye con nuevas ideas para futuros proyectos de investigación</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h4>Gestión de Versiones</h4>
+                <p>Realiza modificaciones y mantén el historial completo de cambios del proyecto</p>
+            </div>
+        </div>
+    </section>
+<!-- Project Showcase Section -->
+<section class="project-showcase" id="proyectos">
+    <div class="section-header">
+        <h3 style="color: var(--accent-gold);">Proyecto Destacado</h3>
+        <p class="subtitle" style="color: var(--text-gray);">Gestión integral de proyectos académicos y banco de ideas</p>
+    </div>
+    <div class="project-card">
+        <div class="project-header">
+            <h4 class="project-title">Plataforma de Monitoreo y Gestión de Proyectos Académicos</h4>
+            <span class="project-tag">2025</span>
+        </div>
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-icon">💡</span>
+                <span>Desarrollo de Software Educativo</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-icon">👥</span>
+                <span>Equipo de Innovación Académica</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-icon">🏛️</span>
+                <span>Escuela Militar de Suboficiales "Sargento Inocencio Chincá"</span>
+            </div>
+        </div>
+        <p class="project-description">
+            Plataforma digital diseñada para gestionar el ciclo completo de los proyectos académicos, desde su creación hasta su finalización. 
+            Permite el monitoreo constante del progreso, la actualización de avances y la colaboración entre diferentes generaciones de estudiantes. 
+            Incluye un banco de ideas que facilita la búsqueda y el registro de propuestas mediante palabras clave, promoviendo la continuidad, la innovación 
+            y el trabajo colaborativo dentro de la comunidad académica. Además, ofrece registro de usuarios con credenciales personales para garantizar una 
+            experiencia segura y personalizada.
+        </p>
+        <div class="project-keywords">
+            <span class="keyword">Gestión</span>
+            <span class="keyword">Proyectos</span>
+            <span class="keyword">Colaboración</span>
+            <span class="keyword">Banco de Ideas</span>
+            <span class="keyword">Innovación</span>
+            <span class="keyword">Registro de Usuarios</span>
+        </div>
+    </div>
+</section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <div class="cta-icon">⚔️</div>
+            <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 900;">
+                ¿Listo para comenzar tu proyecto?
+            </h3>
+            <p style="font-size: 1.1rem; color: var(--text-gray); margin-bottom: 2.5rem; line-height: 1.8;">
+                Únete a cientos de estudiantes militares que ya están transformando sus ideas en realidad. 
+                Comparte tu conocimiento y contribuye al avance de las Fuerzas Militares de Colombia.
+            </p>
+            <div class="cta-buttons" style="justify-content: center;">
+                <button class="btn-primary">Registrarse Ahora</button>
+                <button class="btn-secondary">Ver Documentación</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span style="font-size: 2rem;">⚔️</span>
+                <div>
+                    <p style="color: var(--text-gray); font-size: 0.85rem;">
+                        © 2025 Fuerzas Militares de Colombia<br>
+                        Repositorio Estudiantil Oficial
+                    </p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#proyectos">Proyectos</a>
+                <a href="#ideas">Banco de Ideas</a>
+                <a href="#comunidad">Comunidad</a>
+                <a href="#">Términos</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Soporte</a>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --military-dark: #1a2e1a;
+            --military-green: #2d4a2d;
+            --military-olive: #4a5d3f;
+            --accent-gold: #c9a961;
+            --accent-khaki: #8b8761;
+            --text-light: #f0f4f0;
+            --text-gray: #b8c5b8;
+            --border-camo: #3d5233;
+            --highlight-green: #6b8e5f;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            background: linear-gradient(135deg, var(--military-dark) 0%, var(--military-green) 50%, var(--military-olive) 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(75, 93, 63, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(106, 142, 95, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, rgba(26, 46, 26, 0.95) 0%, rgba(45, 74, 45, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--accent-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-khaki) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .btn-login {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-khaki) 100%);
+            color: var(--military-dark);
+            padding: 0.7rem 1.8rem;
+            border: 2px solid var(--accent-gold);
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(201, 169, 97, 0.4);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 6px;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(90deg, rgba(201, 169, 97, 0.15) 0%, rgba(106, 142, 95, 0.15) 100%);
+            border: 2px solid var(--accent-gold);
+            padding: 0.6rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .hero h2 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 .highlight {
+            color: var(--accent-gold);
+            display: block;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1.1rem 2.5rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-khaki) 100%);
+            color: var(--military-dark);
+            box-shadow: 0 10px 25px rgba(201, 169, 97, 0.4);
+            border: 2px solid var(--accent-gold);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(201, 169, 97, 0.5);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--military-olive) 0%, var(--military-green) 100%);
+            color: var(--text-light);
+            border: 2px solid var(--highlight-green);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, var(--highlight-green) 0%, var(--military-olive) 100%);
+            transform: translateY(-4px);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(45, 74, 45, 0.4) 0%, rgba(61, 82, 51, 0.4) 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--border-camo);
+            transition: all 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-top: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .visual-card {
+            background: linear-gradient(135deg, rgba(45, 74, 45, 0.6) 0%, rgba(26, 46, 26, 0.8) 100%);
+            border: 2px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-item {
+            background: linear-gradient(135deg, rgba(74, 93, 63, 0.5) 0%, rgba(45, 74, 45, 0.5) 100%);
+            border: 2px solid var(--border-camo);
+            padding: 1.8rem;
+            border-radius: 15px;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.4s;
+        }
+
+        .card-item:hover {
+            transform: translateX(15px);
+            border-color: var(--accent-gold);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-khaki) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: var(--military-dark);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-camo);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-gold) 0%, var(--highlight-green) 100%);
+            border-radius: 10px;
+            transition: width 1.5s ease-out;
+        }
+
+        .search-section {
+            background: linear-gradient(90deg, rgba(45, 74, 45, 0.4) 0%, rgba(61, 82, 51, 0.4) 100%);
+            padding: 3rem 0;
+            border-top: 2px solid var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .search-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 1.4rem 1.8rem 1.4rem 4rem;
+            background: var(--military-dark);
+            border: 2px solid var(--border-camo);
+            border-radius: 12px;
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 15px rgba(201, 169, 97, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+        }
+
+        .btn-search {
+            padding: 1.4rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-khaki) 100%);
+            border: 2px solid var(--accent-gold);
+            border-radius: 12px;
+            color: var(--military-dark);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-search:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(201, 169, 97, 0.5);
+        }
+
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h3 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(45, 74, 45, 0.6) 0%, rgba(26, 46, 26, 0.8) 100%);
+            border: 2px solid var(--border-camo);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.2) 0%, rgba(106, 142, 95, 0.2) 100%);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .feature-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+            font-weight: 800;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .project-showcase {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(26, 46, 26, 0.4) 0%, rgba(45, 74, 45, 0.4) 100%);
+            border-radius: 30px;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, rgba(45, 74, 45, 0.6) 0%, rgba(26, 46, 26, 0.8) 100%);
+            border: 2px solid var(--border-camo);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateX(10px);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            font-weight: 800;
+            flex: 1;
+        }
+
+        .project-tag {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-khaki) 100%);
+            color: var(--military-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .meta-icon {
+            color: var(--accent-gold);
+        }
+
+        .project-description {
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .keyword {
+            background: rgba(106, 142, 95, 0.3);
+            border: 1px solid var(--highlight-green);
+            padding: 0.4rem 0.9rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .cta-section {
+            background: linear-gradient(90deg, rgba(201, 169, 97, 0.15) 0%, rgba(106, 142, 95, 0.15) 100%);
+            padding: 6rem 2rem;
+            border-top: 2px solid var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+                .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .footer {
+            background: linear-gradient(90deg, rgba(26, 46, 26, 0.95) 0%, rgba(45, 74, 45, 0.95) 100%);
+            padding: 3rem 0 2rem;
+            border-top: 2px solid var(--accent-gold);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 3rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: linear-gradient(90deg, rgba(26, 46, 26, 0.98) 0%, rgba(45, 74, 45, 0.98) 100%);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+                padding: 2rem 0;
+                border-bottom: 2px solid var(--accent-gold);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .project-header {
+                flex-direction: column;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .section-header h3 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+
+            .btn-search {
+                width: 100%;
+            }
+        }
+    </style>
